@@ -29,7 +29,7 @@
             <label>Mail :</label>
             <input type="email" name="mail" required><br>
             <label>Mot de passe :</label>
-            <input type="text" name="mdp" required><br>
+            <input type="password" name="mdp" required><br>
             <button type="submit" name="connexion">Se connecter</button>
         </form>
         <a href="inscription.php">Pas de compte ? S'inscrire</a>

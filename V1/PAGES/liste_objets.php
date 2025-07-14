@@ -16,9 +16,9 @@ $objets = lister_objets($categorie_id);
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container wide">
         <h1>Liste des objets</h1>
-        <a href="deconnexion.php">Se déconnecter</a>
+        <a href="login.php">Se déconnecter</a>
         <form method="GET" action="">
             <label>Filtrer par catégorie :</label>
             <select name="categorie">

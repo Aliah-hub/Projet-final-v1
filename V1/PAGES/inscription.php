@@ -43,7 +43,7 @@
             <label>Ville :</label>
             <input type="text" name="ville" required><br>
             <label>Mot de passe :</label>
-            <input type="text" name="mdp" required><br>
+            <input type="password" name="mdp" required><br>
             <button type="submit" name="inscription">S'inscrire</button>
         </form>
         <a href="login.php">Deja un compte ? Se connecter</a>
