@@ -1,0 +1,35 @@
+1. (4212) manangana base de donnees
+   - [x] Creer la base emprunt_db 
+   - [x] Creer la table vmembre (id_membre, nom, date_naissance, genre, mail, ville, mdp, image_profil)
+   - [x] Creer la table vcategorie_objet (id_categorie, nom_categorie)
+   - [x] Creer la table vobjet (id_objet, nom_objet, id_categorie, id_membre)
+   - [x] Creer la table vimages_objet (id_image, id_objet, nom_image)
+   - [x] Creer la table vemprunt (id_emprunt, id_objet, id_membre, date_emprunt, date_retour)
+
+2. (4212)Inserer donnees de test 
+   - [x] Inserer 4 membres (Aliah, Aydane, Angela, Voahary) dans vmembre
+   - [x] Inserer 4 categories : Esthetique, Bricolage, Mecanique, Cuisine dans vcategorie_objet
+   - [x] Inserer 10 objets par membre (40 objets) repartis sur les categories dans vobjet
+   - [x] Inserer 10 emprunts avec dates dans vemprunt
+
+3. (4352)Creer les pages
+   - [x] Inscription (inscription.php)
+      - [x] Formulaire avec nom, email, mot de passe, date_naissance, genre, ville
+      - [x] Lien pour se connecter si dejà un compte
+   - [x] Login (login.php)
+      - [x] Formulaire avec mail, mot de passe
+      - [x] Bouton "Se connecter"
+      - [x] Lien pour s'inscrire si pas de compte
+   - [x] Liste Objets (liste_objets.php)
+      - [x] Afficher tous les objets dans un tableau
+      - [x] Afficher date_retour si objet emprunte
+      - [x] Filtre par categorie via dropdown
+
+4. Creer includes
+ (4352)  - [x] connexion (connexion.php): Connexion à la base de donnees
+ (4212) - [x] deconnexion (deconnexion.php): Deconnexion avec destruction de session
+ (4352/(4212))  - [x] fonction (fonctions.php)
+      - [x] inscrire_membre: Enregistrer un nouveau membre
+      - [x] connecter_membre: Authentifier un membre
+      - [x] lister_categories: Lister toutes les categories
+      - [x] lister_objets: Lister les objets avec filtre par categorie
