@@ -1,15 +1,13 @@
-  <?php
-            $categorie_id = isset($_GET['categorie']) ? $_GET['categorie'] : '';
-            $objets = lister_objets($categorie_id);
-            foreach ($objets as $objet) {
-                echo "<tr>";
-                echo "<td>{$objet['nom_objet']}</td>";
-                echo "<td>{$objet['nom_categorie']}</td>";
-                echo "<td>{$objet['proprietaire']}</td>";
-                echo "<td>" . ($objet['date_retour'] ? "Emprunté (retour le {$objet['date_retour']})" : "Disponible") . "</td>";
-                echo "</tr>";
-            }
-             ?>
+<?php
+require_once '../includes/fonctions.php';
+session_start();
+if (!isset($_SESSION['id_membre'])) {
+    header("Location: login.php");
+    exit();
+}
+$categorie_id = isset($_GET['categorie']) ? $_GET['categorie'] : '';
+$objets = lister_objets($categorie_id);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,7 +24,6 @@
             <select name="categorie">
                 <option value="">Toutes</option>
                 <?php
-                require_once '../includes/fonctions.php';
                 $categories = lister_categories();
                 foreach ($categories as $categorie) {
                     echo "<option value='{$categorie['id_categorie']}'>{$categorie['nom_categorie']}</option>";
@@ -42,8 +39,16 @@
                 <th>Propriétaire</th>
                 <th>Statut</th>
             </tr>
-          
-           
+            <?php
+            foreach ($objets as $objet) {
+                echo "<tr>";
+                echo "<td>{$objet['nom_objet']}</td>";
+                echo "<td>{$objet['nom_categorie']}</td>";
+                echo "<td>{$objet['proprietaire']}</td>";
+                echo "<td>" . ($objet['date_retour'] ? "Emprunté (retour le {$objet['date_retour']})" : "Disponible") . "</td>";
+                echo "</tr>";
+            }
+            ?>
         </table>
     </div>
 </body>
